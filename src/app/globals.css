@@ -61,3 +61,46 @@ body {
     transform: none !important;
   }
 }
+
+/* Hero slideshow: very slow zoom on active slide (disabled when reduced motion) */
+@keyframes iv-slideshow-zoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.06);
+  }
+}
+
+.iv-slideshow-zoom {
+  animation: iv-slideshow-zoom 8.5s ease-in-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .iv-slideshow-zoom {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+/* Off-canvas nav: shrink page content when menu open */
+html[data-nav-open="true"] main,
+html[data-nav-open="true"] .site-footer {
+  transform: scale(0.94);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 25px 80px -20px rgba(0, 0, 0, 0.35);
+  transition:
+    transform 0.45s cubic-bezier(0.32, 0.72, 0, 1),
+    border-radius 0.45s ease,
+    box-shadow 0.45s ease;
+  transform-origin: top center;
+}
+
+main,
+.site-footer {
+  transition:
+    transform 0.45s cubic-bezier(0.32, 0.72, 0, 1),
+    border-radius 0.45s ease,
+    box-shadow 0.45s ease;
+}

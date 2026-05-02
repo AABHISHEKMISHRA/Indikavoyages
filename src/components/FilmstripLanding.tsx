@@ -49,13 +49,19 @@ function CalmSlideshow() {
           }}
           aria-hidden={i === index ? undefined : true}
         >
-          <img
-            src={img.src}
-            alt=""
-            className="h-full w-full object-cover"
-            loading={i === 0 ? "eager" : "lazy"}
-            decoding="async"
-          />
+          <div className="absolute inset-0 overflow-hidden">
+            <img
+              key={i === index ? `zoom-${index}-${i}` : `idle-${i}`}
+              src={img.src}
+              alt=""
+              className={[
+                "h-full w-full object-cover",
+                i === index && motionOk ? "iv-slideshow-zoom" : "",
+              ].join(" ")}
+              loading={i === 0 ? "eager" : "lazy"}
+              decoding="async"
+            />
+          </div>
         </div>
       ))}
     </>
@@ -65,7 +71,7 @@ function CalmSlideshow() {
 export function FilmstripLanding() {
   return (
     <div className="bg-white">
-      {/* —— Hero: full-bleed slideshow — long crossfades, no zoom */}
+      {/* —— Hero: full-bleed slideshow — long crossfades + slow zoom */}
       <section className="relative min-h-[min(100dvh,900px)] overflow-hidden bg-zinc-950">
         <div className="absolute inset-0">
           <CalmSlideshow />
@@ -194,22 +200,47 @@ export function FilmstripLanding() {
             </div>
           </Reveal>
 
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {HERO_IMAGES.slice(0, 6).map((img, i) => (
-              <Reveal key={img.src} delayMs={(i % 3) * 70}>
-                <figure className="group relative aspect-[4/3] overflow-hidden rounded-3xl border border-zinc-200 bg-zinc-100 shadow-sm transition duration-500 hover:-translate-y-1 hover:shadow-xl">
-                  <img
-                    src={img.src}
-                    alt={img.alt}
-                    className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.04]"
-                    loading="lazy"
-                  />
-                  <figcaption className="absolute inset-x-0 bottom-0 translate-y-full bg-gradient-to-t from-black/70 to-transparent p-4 text-sm text-white transition duration-500 group-hover:translate-y-0">
-                    <span className="line-clamp-2">{img.alt}</span>
-                  </figcaption>
-                </figure>
-              </Reveal>
-            ))}
+          <Reveal>
+            <figure className="group relative mb-10 aspect-[21/9] min-h-[200px] w-full overflow-hidden rounded-3xl border border-zinc-200 bg-zinc-100 shadow-md sm:min-h-[260px]">
+              <img
+                src={HERO_IMAGES[3].src}
+                alt={HERO_IMAGES[3].alt}
+                className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.02]"
+                loading="lazy"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
+              <figcaption className="absolute bottom-0 left-0 p-6 sm:p-8">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/80">
+                  Jaipur
+                </p>
+                <p className="mt-2 text-xl font-semibold tracking-tight text-white sm:text-2xl">
+                  Hawa Mahal &amp; the Pink City
+                </p>
+                <p className="mt-2 max-w-lg text-sm leading-6 text-white/85">
+                  Facades, bazaars, and royal forts — paced for comfort, not crowds.
+                </p>
+              </figcaption>
+            </figure>
+          </Reveal>
+
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {HERO_IMAGES.filter((_, idx) => idx !== 3)
+              .slice(0, 6)
+              .map((img, i) => (
+                <Reveal key={img.src} delayMs={(i % 3) * 70}>
+                  <figure className="group relative aspect-[4/3] overflow-hidden rounded-3xl border border-zinc-200 bg-zinc-100 shadow-sm transition duration-500 hover:-translate-y-1 hover:shadow-xl">
+                    <img
+                      src={img.src}
+                      alt={img.alt}
+                      className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.04]"
+                      loading="lazy"
+                    />
+                    <figcaption className="absolute inset-x-0 bottom-0 translate-y-full bg-gradient-to-t from-black/70 to-transparent p-4 text-sm text-white transition duration-500 group-hover:translate-y-0">
+                      <span className="line-clamp-2">{img.alt}</span>
+                    </figcaption>
+                  </figure>
+                </Reveal>
+              ))}
           </div>
         </Container>
       </section>

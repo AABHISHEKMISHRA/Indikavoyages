@@ -3,7 +3,7 @@ import { Container } from "@/components/Container";
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-zinc-200/70 bg-white">
+    <footer className="site-footer border-t border-zinc-200/70 bg-white">
       <Container className="py-10">
         <div className="grid gap-8 md:grid-cols-4">
           <div className="md:col-span-2">
