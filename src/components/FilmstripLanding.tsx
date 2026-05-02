@@ -1,19 +1,27 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { HERO_IMAGES } from "@/data/heroImages";
 import { Container } from "@/components/Container";
 import { Reveal } from "@/components/Reveal";
 
-const SLIDE_INTERVAL_MS = 8500;
-const FADE_MS = 2800;
+/** Align with `iv-slideshow-zoom` (17s): full zoom completes, then crossfade. */
+const SLIDE_INTERVAL_MS = 22_000;
+const FADE_MS = 4_500;
 
 function CalmSlideshow() {
   const [index, setIndex] = useState(0);
+  const [leaving, setLeaving] = useState<number | null>(null);
+  const [zoomTick, setZoomTick] = useState(0);
   const [motionOk, setMotionOk] = useState(true);
+  const idxRef = useRef(0);
 
   const count = HERO_IMAGES.length;
+
+  useEffect(() => {
+    idxRef.current = index;
+  }, [index]);
 
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -24,46 +32,77 @@ function CalmSlideshow() {
   }, []);
 
   useEffect(() => {
+    setZoomTick((t) => t + 1);
+  }, [index]);
+
+  useEffect(() => {
     if (!motionOk) return;
-    const id = window.setInterval(
-      () => setIndex((i) => (i + 1) % count),
-      SLIDE_INTERVAL_MS,
-    );
+    const id = window.setInterval(() => {
+      const cur = idxRef.current;
+      setLeaving(cur);
+      const next = (cur + 1) % count;
+      setIndex(next);
+      idxRef.current = next;
+      window.setTimeout(() => setLeaving(null), FADE_MS);
+    }, SLIDE_INTERVAL_MS);
     return () => window.clearInterval(id);
   }, [motionOk, count]);
 
   return (
     <>
-      {HERO_IMAGES.map((img, i) => (
-        <div
-          key={img.src}
-          className={[
-            "pointer-events-none absolute inset-0",
-            i === index ? "z-[1]" : "z-0",
-          ].join(" ")}
-          style={{
-            transitionProperty: "opacity",
-            transitionDuration: `${FADE_MS}ms`,
-            transitionTimingFunction: "cubic-bezier(0.45, 0, 0.2, 1)",
-            opacity: i === index ? 1 : 0,
-          }}
-          aria-hidden={i === index ? undefined : true}
-        >
-          <div className="absolute inset-0 overflow-hidden">
-            <img
-              key={i === index ? `zoom-${index}-${i}` : `idle-${i}`}
-              src={img.src}
-              alt=""
-              className={[
-                "h-full w-full object-cover",
-                i === index && motionOk ? "iv-slideshow-zoom" : "",
-              ].join(" ")}
-              loading={i === 0 ? "eager" : "lazy"}
-              decoding="async"
-            />
+      {HERO_IMAGES.map((img, i) => {
+        const isFront = i === index;
+        const isLeaving = leaving === i;
+        const z = isFront ? 2 : isLeaving ? 1 : 0;
+        /** Front fades in 0→1; leaving fades out 1→0; others stay 0. */
+        const opacity = isFront ? 1 : 0;
+
+        return (
+          <div
+            key={img.src}
+            className={[
+              "pointer-events-none absolute inset-0",
+              z === 2 ? "z-[2]" : z === 1 ? "z-[1]" : "z-0",
+            ].join(" ")}
+            style={{
+              transitionProperty: "opacity",
+              transitionDuration: `${FADE_MS}ms`,
+              transitionTimingFunction: "cubic-bezier(0.45, 0, 0.2, 1)",
+              opacity,
+            }}
+            aria-hidden={isFront ? undefined : true}
+          >
+            <div className="absolute inset-0 overflow-hidden">
+              <img
+                key={
+                  isFront && motionOk && !isLeaving
+                    ? `zoom-${index}-${zoomTick}`
+                    : `idle-${img.src}`
+                }
+                src={img.src}
+                alt=""
+                className={[
+                  "h-full w-full object-cover",
+                  isLeaving
+                    ? "scale-[1.09]"
+                    : isFront && motionOk
+                      ? "iv-slideshow-zoom"
+                      : "",
+                ]
+                  .filter(Boolean)
+                  .join(" ")}
+                style={
+                  isLeaving
+                    ? { transformOrigin: "center center" }
+                    : undefined
+                }
+                loading={i === 0 ? "eager" : "lazy"}
+                decoding="async"
+              />
+            </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </>
   );
 }

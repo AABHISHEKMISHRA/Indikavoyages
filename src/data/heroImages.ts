@@ -12,7 +12,7 @@ export const HERO_IMAGES = [
     alt: "Snow-capped peaks above clouds (Himalayas).",
   },
   {
-    src: "/images/hero/04-jaipur-hawa-mahal.webp",
+    src: "/images/hero/hawa-mahal-jaipur.webp",
     alt: "Hawa Mahal (Palace of Winds) facade, Jaipur, India.",
   },
   {

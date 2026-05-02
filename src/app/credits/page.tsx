@@ -19,7 +19,7 @@ const ASSETS = [
     note: "Mountain landscapes (Himalayas).",
   },
   {
-    file: "04-jaipur-hawa-mahal.webp",
+    file: "hawa-mahal-jaipur.webp",
     note: "Hawa Mahal facade (Jaipur, India).",
   },
   {
