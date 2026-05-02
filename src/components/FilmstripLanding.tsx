@@ -1,60 +1,74 @@
 "use client";
 
-import type { CSSProperties } from "react";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { HERO_IMAGES } from "@/data/heroImages";
 import { Container } from "@/components/Container";
 import { Reveal } from "@/components/Reveal";
 
-function MarqueeRow({
-  reverse,
-  durationSec,
-}: {
-  reverse?: boolean;
-  durationSec: number;
-}) {
-  const strip = [...HERO_IMAGES, ...HERO_IMAGES];
+const SLIDE_INTERVAL_MS = 8500;
+const FADE_MS = 2800;
+
+function CalmSlideshow() {
+  const [index, setIndex] = useState(0);
+  const [motionOk, setMotionOk] = useState(true);
+
+  const count = HERO_IMAGES.length;
+
+  useEffect(() => {
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const sync = () => setMotionOk(!mq.matches);
+    sync();
+    mq.addEventListener("change", sync);
+    return () => mq.removeEventListener("change", sync);
+  }, []);
+
+  useEffect(() => {
+    if (!motionOk) return;
+    const id = window.setInterval(
+      () => setIndex((i) => (i + 1) % count),
+      SLIDE_INTERVAL_MS,
+    );
+    return () => window.clearInterval(id);
+  }, [motionOk, count]);
+
   return (
-    <div className="relative h-[min(200px,22vh)] w-full overflow-hidden sm:h-[min(240px,26vh)]">
-      <div
-        className={[
-          "iv-marquee flex w-max gap-3 will-change-transform",
-          reverse ? "iv-marquee--reverse" : "",
-        ].join(" ")}
-        style={
-          {
-            ["--iv-marquee-duration" as string]: `${durationSec}s`,
-          } as CSSProperties
-        }
-      >
-        {strip.map((img, i) => (
-          <div
-            key={`${img.src}-${i}`}
-            className="relative h-[min(200px,22vh)] w-[min(72vw,320px)] shrink-0 overflow-hidden rounded-2xl ring-1 ring-white/10 sm:h-[min(240px,26vh)] sm:w-[280px]"
-          >
-            <img
-              src={img.src}
-              alt=""
-              className="h-full w-full object-cover"
-              loading={i < 4 ? "eager" : "lazy"}
-              decoding="async"
-            />
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/25 to-transparent" />
-          </div>
-        ))}
-      </div>
-    </div>
+    <>
+      {HERO_IMAGES.map((img, i) => (
+        <div
+          key={img.src}
+          className={[
+            "pointer-events-none absolute inset-0",
+            i === index ? "z-[1]" : "z-0",
+          ].join(" ")}
+          style={{
+            transitionProperty: "opacity",
+            transitionDuration: `${FADE_MS}ms`,
+            transitionTimingFunction: "cubic-bezier(0.45, 0, 0.2, 1)",
+            opacity: i === index ? 1 : 0,
+          }}
+          aria-hidden={i === index ? undefined : true}
+        >
+          <img
+            src={img.src}
+            alt=""
+            className="h-full w-full object-cover"
+            loading={i === 0 ? "eager" : "lazy"}
+            decoding="async"
+          />
+        </div>
+      ))}
+    </>
   );
 }
 
 export function FilmstripLanding() {
   return (
     <div className="bg-white">
-      {/* —— Hero: flowing filmstrips + minimal copy (no zoom / no crossfade blink) */}
+      {/* —— Hero: full-bleed slideshow — long crossfades, no zoom */}
       <section className="relative min-h-[min(100dvh,900px)] overflow-hidden bg-zinc-950">
-        <div className="absolute inset-0 flex flex-col justify-center gap-4 py-24 opacity-[0.92]">
-          <MarqueeRow durationSec={85} />
-          <MarqueeRow reverse durationSec={110} />
+        <div className="absolute inset-0">
+          <CalmSlideshow />
         </div>
         <div
           aria-hidden="true"
