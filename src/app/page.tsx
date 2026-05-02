@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Container } from "@/components/Container";
+import { HeroMosaic } from "@/components/HeroMosaic";
 
 export default function Home() {
   return (
@@ -7,27 +8,26 @@ export default function Home() {
       <section className="relative overflow-hidden">
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(24,24,27,0.10),transparent_55%)]"
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(234,88,12,0.10),transparent_55%),radial-gradient(ellipse_at_bottom,rgba(15,118,110,0.10),transparent_55%)]"
         />
-        <Container className="relative py-16 sm:py-20">
-          <div className="grid items-center gap-12 lg:grid-cols-12">
-            <div className="lg:col-span-7">
-              <div className="inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-white px-3 py-1 text-xs font-medium text-zinc-700">
+        <Container className="relative py-14 sm:py-20">
+          <div className="grid items-start gap-10 lg:grid-cols-12 lg:gap-12">
+            <div className="order-2 lg:order-1 lg:col-span-5 lg:pt-2">
+              <div className="inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-white/80 px-3 py-1 text-xs font-medium text-zinc-700 shadow-sm backdrop-blur">
                 <span className="h-1.5 w-1.5 rounded-full bg-brand-sea" />
-                India operations • 24×7 support • Verified partners
+                Luxury operations • India-wide • Concierge support
               </div>
               <h1 className="mt-5 text-4xl font-semibold tracking-tight text-brand-navy sm:text-5xl">
-                Travel management for teams and families across India.
+                India travel, orchestrated with calm precision.
               </h1>
-              <p className="mt-5 max-w-2xl text-lg leading-8 text-zinc-600">
-                We plan, book, and run end-to-end travel operations in India —
-                itineraries, transport, hotels, permits, and on-ground support —
-                so your trip stays smooth and predictable.
+              <p className="mt-5 max-w-xl text-lg leading-8 text-zinc-600">
+                Curated itineraries, vetted partners, and on-ground coordination —
+                built for travelers who want premium comfort without chaos.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <Link
                   href="/contact"
-                  className="inline-flex h-12 items-center justify-center rounded-full bg-brand-saffron px-6 text-sm font-semibold text-white transition hover:bg-brand-saffron/90"
+                  className="inline-flex h-12 items-center justify-center rounded-full bg-brand-saffron px-6 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-saffron/90"
                 >
                   Request a quote
                 </Link>
@@ -39,16 +39,16 @@ export default function Home() {
                 </Link>
               </div>
 
-              <dl className="mt-10 grid grid-cols-2 gap-6 sm:grid-cols-4">
+              <dl className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-2">
                 {[
-                  { k: "Pan-India", v: "Operations coverage" },
+                  { k: "White-glove", v: "Itinerary + vendor orchestration" },
+                  { k: "Transparent", v: "Options, upgrades, and budgets" },
+                  { k: "Responsive", v: "Fast help when plans change" },
                   { k: "GST-ready", v: "Invoices on request" },
-                  { k: "On-trip", v: "Support escalation" },
-                  { k: "Curated", v: "Vendors & stays" },
                 ].map((item) => (
                   <div
                     key={item.k}
-                    className="rounded-2xl border border-zinc-200 bg-white p-4"
+                    className="rounded-2xl border border-zinc-200 bg-white/80 p-4 shadow-sm backdrop-blur"
                   >
                     <dt className="text-sm font-semibold text-brand-navy">
                       {item.k}
@@ -57,11 +57,21 @@ export default function Home() {
                   </div>
                 ))}
               </dl>
+
+              <p className="mt-6 text-xs leading-5 text-zinc-500">
+                Imagery shown is a curated stock set for launch — see{" "}
+                <Link className="font-semibold text-brand-navy underline decoration-brand-saffron/40 underline-offset-4 hover:decoration-brand-saffron" href="/credits">
+                  credits
+                </Link>
+                .
+              </p>
             </div>
 
-            <div className="lg:col-span-5">
-              <div className="rounded-3xl border border-zinc-200 bg-gradient-to-b from-zinc-50 to-white p-6 shadow-sm">
-                <div className="rounded-2xl bg-white p-6">
+            <div className="order-1 lg:order-2 lg:col-span-7">
+              <HeroMosaic />
+
+              <div className="mt-6 rounded-3xl border border-zinc-200 bg-gradient-to-b from-zinc-50 to-white p-6 shadow-sm">
+                <div className="rounded-2xl bg-white p-6 shadow-sm">
                   <div className="text-sm font-semibold text-brand-navy">
                     Sample itinerary
                   </div>

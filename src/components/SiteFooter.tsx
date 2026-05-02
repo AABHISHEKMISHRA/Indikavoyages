@@ -17,6 +17,12 @@ export function SiteFooter() {
             <p className="mt-4 text-xs text-zinc-500">
               © {new Date().getFullYear()} Indikavoyages. All rights reserved.
             </p>
+            <p className="mt-3 text-xs leading-5 text-zinc-500">
+              Imagery: stock placeholders (licensed).{" "}
+              <Link className="underline decoration-brand-saffron/40 underline-offset-4 hover:text-brand-navy" href="/credits">
+                Credits
+              </Link>
+            </p>
           </div>
 
           <div>
