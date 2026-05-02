@@ -55,11 +55,7 @@ export function SiteFooter() {
             <ul className="mt-3 space-y-2 text-sm text-zinc-600">
               <li>
                 <span className="font-medium text-brand-navy">Email:</span>{" "}
-                hello@indikavoyages.com
-              </li>
-              <li>
-                <span className="font-medium text-brand-navy">Phone:</span> +91
-                00000 00000
+                indikavoyages@gmail.com
               </li>
               <li>
                 <Link className="text-zinc-600 hover:text-brand-navy" href="/contact">

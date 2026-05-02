@@ -27,12 +27,8 @@ export default function ContactPage() {
                 <div className="flex justify-between gap-6">
                   <dt className="text-zinc-500">Email</dt>
                   <dd className="font-medium text-brand-navy">
-                    hello@indikavoyages.com
+                    indikavoyages@gmail.com
                   </dd>
-                </div>
-                <div className="flex justify-between gap-6">
-                  <dt className="text-zinc-500">Phone</dt>
-                  <dd className="font-medium text-brand-navy">+91 00000 00000</dd>
                 </div>
                 <div className="flex justify-between gap-6">
                   <dt className="text-zinc-500">Hours</dt>
