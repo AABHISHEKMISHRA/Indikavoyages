@@ -14,14 +14,37 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteTitle = "Indikavoyages — Travel Management (India)";
+const siteDescription =
+  "Luxury travel management and ground operations across India: curated itineraries, bookings, corporate travel, and on-trip support.";
+
 export const metadata: Metadata = {
   title: {
-    default: "Indikavoyages — Travel Management (India)",
+    default: siteTitle,
     template: "%s · Indikavoyages",
   },
-  description:
-    "Travel management and ground operations across India: planning, bookings, itineraries, corporate travel, and on-trip support.",
+  description: siteDescription,
   metadataBase: new URL("https://indikavoyages.com"),
+  alternates: {
+    canonical: "https://indikavoyages.com/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    url: "https://indikavoyages.com",
+    siteName: "Indikavoyages",
+    title: siteTitle,
+    description: siteDescription,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteTitle,
+    description: siteDescription,
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({

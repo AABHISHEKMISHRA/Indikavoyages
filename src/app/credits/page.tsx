@@ -20,7 +20,7 @@ const ASSETS = [
   },
   {
     file: "04-jaipur-hawa-mahal.webp",
-    note: "Historic facade detail (Jaipur, India).",
+    note: "Hawa Mahal facade (Jaipur, India).",
   },
   {
     file: "05-varanasi-ganga.webp",

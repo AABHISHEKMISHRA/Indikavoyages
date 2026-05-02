@@ -13,7 +13,7 @@ export const HERO_IMAGES = [
   },
   {
     src: "/images/hero/04-jaipur-hawa-mahal.webp",
-    alt: "Historic sandstone facade (Jaipur, India).",
+    alt: "Hawa Mahal (Palace of Winds) facade, Jaipur, India.",
   },
   {
     src: "/images/hero/05-varanasi-ganga.webp",
