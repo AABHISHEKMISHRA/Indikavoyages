@@ -9,8 +9,8 @@ export default function AboutPage() {
     <div className="bg-white">
       <Container className="py-12 sm:py-16">
         <div className="max-w-3xl">
-          <h1 className="text-3xl font-semibold tracking-tight text-zinc-950 sm:text-4xl">
-            About Saffron Trails
+          <h1 className="text-3xl font-semibold tracking-tight text-brand-navy sm:text-4xl">
+            About Indikavoyages
           </h1>
           <p className="mt-4 text-base leading-7 text-zinc-600">
             We’re a travel management team focused on operations in India. Our
@@ -38,7 +38,7 @@ export default function AboutPage() {
               key={x.title}
               className="rounded-3xl border border-zinc-200 bg-zinc-50 p-6"
             >
-              <div className="text-base font-semibold text-zinc-950">
+              <div className="text-base font-semibold text-brand-navy">
                 {x.title}
               </div>
               <p className="mt-2 text-sm leading-6 text-zinc-600">{x.desc}</p>
@@ -70,7 +70,7 @@ export default function AboutPage() {
                     key={m.k}
                     className="rounded-2xl border border-zinc-200 bg-zinc-50 p-5"
                   >
-                    <dt className="text-sm font-semibold text-zinc-950">
+                    <dt className="text-sm font-semibold text-brand-navy">
                       {m.k}
                     </dt>
                     <dd className="mt-1 text-sm text-zinc-600">{m.v}</dd>

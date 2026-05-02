@@ -16,12 +16,12 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Saffron Trails — Travel Management (India)",
-    template: "%s · Saffron Trails",
+    default: "Indikavoyages — Travel Management (India)",
+    template: "%s · Indikavoyages",
   },
   description:
     "Travel management and ground operations across India: planning, bookings, itineraries, corporate travel, and on-trip support.",
-  metadataBase: new URL("https://example.com"),
+  metadataBase: new URL("https://indikavoyages.com"),
 };
 
 export default function RootLayout({

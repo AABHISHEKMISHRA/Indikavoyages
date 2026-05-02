@@ -7,15 +7,15 @@ export function SiteFooter() {
       <Container className="py-10">
         <div className="grid gap-8 md:grid-cols-4">
           <div className="md:col-span-2">
-            <div className="text-sm font-semibold text-zinc-950">
-              Saffron Trails
+            <div className="text-sm font-semibold text-brand-navy">
+              Indika<span className="text-brand-saffron">voyages</span>
             </div>
             <p className="mt-3 max-w-prose text-sm leading-6 text-zinc-600">
               End-to-end travel management and ground operations across India —
               from planning and bookings to on-trip support.
             </p>
             <p className="mt-4 text-xs text-zinc-500">
-              © {new Date().getFullYear()} Saffron Trails. All rights reserved.
+              © {new Date().getFullYear()} Indikavoyages. All rights reserved.
             </p>
           </div>
 
@@ -25,13 +25,13 @@ export function SiteFooter() {
             </div>
             <ul className="mt-3 space-y-2 text-sm">
               <li>
-                <Link className="text-zinc-600 hover:text-zinc-950" href="/about">
+                <Link className="text-zinc-600 hover:text-brand-navy" href="/about">
                   About
                 </Link>
               </li>
               <li>
                 <Link
-                  className="text-zinc-600 hover:text-zinc-950"
+                  className="text-zinc-600 hover:text-brand-navy"
                   href="/services"
                 >
                   Services
@@ -39,7 +39,7 @@ export function SiteFooter() {
               </li>
               <li>
                 <Link
-                  className="text-zinc-600 hover:text-zinc-950"
+                  className="text-zinc-600 hover:text-brand-navy"
                   href="/destinations"
                 >
                   Destinations
@@ -54,15 +54,15 @@ export function SiteFooter() {
             </div>
             <ul className="mt-3 space-y-2 text-sm text-zinc-600">
               <li>
-                <span className="font-medium text-zinc-950">Email:</span>{" "}
-                hello@saffrontrails.in
+                <span className="font-medium text-brand-navy">Email:</span>{" "}
+                hello@indikavoyages.com
               </li>
               <li>
-                <span className="font-medium text-zinc-950">Phone:</span> +91
+                <span className="font-medium text-brand-navy">Phone:</span> +91
                 00000 00000
               </li>
               <li>
-                <Link className="text-zinc-600 hover:text-zinc-950" href="/contact">
+                <Link className="text-zinc-600 hover:text-brand-navy" href="/contact">
                   Request a callback
                 </Link>
               </li>

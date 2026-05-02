@@ -43,7 +43,7 @@ export default function DestinationsPage() {
     <div className="bg-white">
       <Container className="py-12 sm:py-16">
         <div className="max-w-2xl">
-          <h1 className="text-3xl font-semibold tracking-tight text-zinc-950 sm:text-4xl">
+          <h1 className="text-3xl font-semibold tracking-tight text-brand-navy sm:text-4xl">
             Destinations across India
           </h1>
           <p className="mt-4 text-base leading-7 text-zinc-600">
@@ -58,7 +58,7 @@ export default function DestinationsPage() {
               key={r.title}
               className="rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm"
             >
-              <div className="text-base font-semibold text-zinc-950">
+              <div className="text-base font-semibold text-brand-navy">
                 {r.title}
               </div>
               <p className="mt-2 text-sm leading-6 text-zinc-600">{r.desc}</p>
@@ -76,7 +76,7 @@ export default function DestinationsPage() {
           ))}
         </div>
 
-        <div className="mt-12 rounded-3xl bg-zinc-950 p-8 text-white">
+        <div className="mt-12 rounded-3xl bg-gradient-to-br from-brand-navy to-brand-sea p-8 text-white">
           <div className="grid items-center gap-6 lg:grid-cols-12">
             <div className="lg:col-span-8">
               <div className="text-sm font-semibold">Not seeing your route?</div>
@@ -88,7 +88,7 @@ export default function DestinationsPage() {
             <div className="lg:col-span-4 lg:text-right">
               <Link
                 href="/contact"
-                className="inline-flex h-12 items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-zinc-950 transition hover:bg-zinc-100"
+                className="inline-flex h-12 items-center justify-center rounded-full bg-brand-saffron px-6 text-sm font-semibold text-white transition hover:bg-brand-saffron/90"
               >
                 Request planning help
               </Link>

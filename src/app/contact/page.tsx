@@ -10,7 +10,7 @@ export default function ContactPage() {
       <Container className="py-12 sm:py-16">
         <div className="grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-6">
-            <h1 className="text-3xl font-semibold tracking-tight text-zinc-950 sm:text-4xl">
+            <h1 className="text-3xl font-semibold tracking-tight text-brand-navy sm:text-4xl">
               Contact us
             </h1>
             <p className="mt-4 text-base leading-7 text-zinc-600">
@@ -20,23 +20,23 @@ export default function ContactPage() {
             </p>
 
             <div className="mt-8 rounded-3xl border border-zinc-200 bg-zinc-50 p-6">
-              <div className="text-sm font-semibold text-zinc-950">
+              <div className="text-sm font-semibold text-brand-navy">
                 Quick details
               </div>
               <dl className="mt-4 space-y-3 text-sm text-zinc-700">
                 <div className="flex justify-between gap-6">
                   <dt className="text-zinc-500">Email</dt>
-                  <dd className="font-medium text-zinc-950">
-                    hello@saffrontrails.in
+                  <dd className="font-medium text-brand-navy">
+                    hello@indikavoyages.com
                   </dd>
                 </div>
                 <div className="flex justify-between gap-6">
                   <dt className="text-zinc-500">Phone</dt>
-                  <dd className="font-medium text-zinc-950">+91 00000 00000</dd>
+                  <dd className="font-medium text-brand-navy">+91 00000 00000</dd>
                 </div>
                 <div className="flex justify-between gap-6">
                   <dt className="text-zinc-500">Hours</dt>
-                  <dd className="font-medium text-zinc-950">
+                  <dd className="font-medium text-brand-navy">
                     Mon–Sat, 10:00–19:00 IST
                   </dd>
                 </div>
@@ -46,7 +46,7 @@ export default function ContactPage() {
 
           <div className="lg:col-span-6">
             <div className="rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm">
-              <div className="text-sm font-semibold text-zinc-950">
+              <div className="text-sm font-semibold text-brand-navy">
                 Request form (static)
               </div>
               <p className="mt-2 text-sm leading-6 text-zinc-600">
@@ -57,17 +57,17 @@ export default function ContactPage() {
               <form className="mt-6 grid gap-4">
                 <div className="grid gap-4 sm:grid-cols-2">
                   <label className="grid gap-2 text-sm">
-                    <span className="font-medium text-zinc-950">Name</span>
+                    <span className="font-medium text-brand-navy">Name</span>
                     <input
-                      className="h-11 rounded-2xl border border-zinc-200 bg-white px-4 text-zinc-950 outline-none focus:border-zinc-400"
+                      className="h-11 rounded-2xl border border-zinc-200 bg-white px-4 text-zinc-950 outline-none focus:border-brand-saffron focus:ring-2 focus:ring-brand-saffron/25"
                       placeholder="Your name"
                       name="name"
                     />
                   </label>
                   <label className="grid gap-2 text-sm">
-                    <span className="font-medium text-zinc-950">Email</span>
+                    <span className="font-medium text-brand-navy">Email</span>
                     <input
-                      className="h-11 rounded-2xl border border-zinc-200 bg-white px-4 text-zinc-950 outline-none focus:border-zinc-400"
+                      className="h-11 rounded-2xl border border-zinc-200 bg-white px-4 text-zinc-950 outline-none focus:border-brand-saffron focus:ring-2 focus:ring-brand-saffron/25"
                       placeholder="name@company.com"
                       name="email"
                       type="email"
@@ -77,17 +77,17 @@ export default function ContactPage() {
 
                 <div className="grid gap-4 sm:grid-cols-2">
                   <label className="grid gap-2 text-sm">
-                    <span className="font-medium text-zinc-950">Travel dates</span>
+                    <span className="font-medium text-brand-navy">Travel dates</span>
                     <input
-                      className="h-11 rounded-2xl border border-zinc-200 bg-white px-4 text-zinc-950 outline-none focus:border-zinc-400"
+                      className="h-11 rounded-2xl border border-zinc-200 bg-white px-4 text-zinc-950 outline-none focus:border-brand-saffron focus:ring-2 focus:ring-brand-saffron/25"
                       placeholder="e.g., 12–18 June"
                       name="dates"
                     />
                   </label>
                   <label className="grid gap-2 text-sm">
-                    <span className="font-medium text-zinc-950">Travelers</span>
+                    <span className="font-medium text-brand-navy">Travelers</span>
                     <input
-                      className="h-11 rounded-2xl border border-zinc-200 bg-white px-4 text-zinc-950 outline-none focus:border-zinc-400"
+                      className="h-11 rounded-2xl border border-zinc-200 bg-white px-4 text-zinc-950 outline-none focus:border-brand-saffron focus:ring-2 focus:ring-brand-saffron/25"
                       placeholder="e.g., 2 adults"
                       name="travelers"
                     />
@@ -95,22 +95,22 @@ export default function ContactPage() {
                 </div>
 
                 <label className="grid gap-2 text-sm">
-                  <span className="font-medium text-zinc-950">
+                  <span className="font-medium text-brand-navy">
                     Cities / route
                   </span>
                   <input
-                    className="h-11 rounded-2xl border border-zinc-200 bg-white px-4 text-zinc-950 outline-none focus:border-zinc-400"
+                    className="h-11 rounded-2xl border border-zinc-200 bg-white px-4 text-zinc-950 outline-none focus:border-brand-saffron focus:ring-2 focus:ring-brand-saffron/25"
                     placeholder="e.g., Delhi, Agra, Jaipur"
                     name="route"
                   />
                 </label>
 
                 <label className="grid gap-2 text-sm">
-                  <span className="font-medium text-zinc-950">
+                  <span className="font-medium text-brand-navy">
                     Notes / preferences
                   </span>
                   <textarea
-                    className="min-h-28 rounded-2xl border border-zinc-200 bg-white px-4 py-3 text-zinc-950 outline-none focus:border-zinc-400"
+                    className="min-h-28 rounded-2xl border border-zinc-200 bg-white px-4 py-3 text-zinc-950 outline-none focus:border-brand-saffron focus:ring-2 focus:ring-brand-saffron/25"
                     placeholder="Comfort level, hotel category, interests, corporate constraints…"
                     name="notes"
                   />
@@ -118,7 +118,7 @@ export default function ContactPage() {
 
                 <button
                   type="button"
-                  className="mt-2 inline-flex h-12 items-center justify-center rounded-full bg-zinc-950 px-6 text-sm font-semibold text-white transition hover:bg-zinc-800"
+                  className="mt-2 inline-flex h-12 items-center justify-center rounded-full bg-brand-saffron px-6 text-sm font-semibold text-white transition hover:bg-brand-saffron/90"
                 >
                   Submit request
                 </button>

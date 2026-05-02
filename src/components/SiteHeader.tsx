@@ -28,7 +28,7 @@ function NavLink({
       href={href}
       className={[
         "text-sm font-medium transition-colors",
-        active ? "text-zinc-950" : "text-zinc-600 hover:text-zinc-950",
+        active ? "text-brand-navy" : "text-zinc-600 hover:text-brand-navy",
       ].join(" ")}
     >
       {label}
@@ -41,11 +41,11 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-zinc-200/70 bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60">
       <Container className="flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
-          <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-zinc-950 text-white">
+          <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-brand-navy to-brand-sea text-white">
             <LogoMark className="h-5 w-5" />
           </span>
-          <span className="text-sm font-semibold tracking-tight text-zinc-950">
-            Saffron Trails
+          <span className="text-sm font-semibold tracking-tight text-brand-navy">
+            Indika<span className="text-brand-saffron">voyages</span>
           </span>
           <span className="hidden text-sm text-zinc-500 sm:inline">
             India travel operations
@@ -61,7 +61,7 @@ export function SiteHeader() {
         <div className="flex items-center gap-3">
           <Link
             href="/contact"
-            className="inline-flex h-10 items-center justify-center rounded-full bg-zinc-950 px-5 text-sm font-semibold text-white transition hover:bg-zinc-800"
+            className="inline-flex h-10 items-center justify-center rounded-full bg-brand-saffron px-5 text-sm font-semibold text-white transition hover:bg-brand-saffron/90"
           >
             Get a quote
           </Link>

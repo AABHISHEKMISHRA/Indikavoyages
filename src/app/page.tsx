@@ -13,10 +13,10 @@ export default function Home() {
           <div className="grid items-center gap-12 lg:grid-cols-12">
             <div className="lg:col-span-7">
               <div className="inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-white px-3 py-1 text-xs font-medium text-zinc-700">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                <span className="h-1.5 w-1.5 rounded-full bg-brand-sea" />
                 India operations • 24×7 support • Verified partners
               </div>
-              <h1 className="mt-5 text-4xl font-semibold tracking-tight text-zinc-950 sm:text-5xl">
+              <h1 className="mt-5 text-4xl font-semibold tracking-tight text-brand-navy sm:text-5xl">
                 Travel management for teams and families across India.
               </h1>
               <p className="mt-5 max-w-2xl text-lg leading-8 text-zinc-600">
@@ -27,13 +27,13 @@ export default function Home() {
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <Link
                   href="/contact"
-                  className="inline-flex h-12 items-center justify-center rounded-full bg-zinc-950 px-6 text-sm font-semibold text-white transition hover:bg-zinc-800"
+                  className="inline-flex h-12 items-center justify-center rounded-full bg-brand-saffron px-6 text-sm font-semibold text-white transition hover:bg-brand-saffron/90"
                 >
                   Request a quote
                 </Link>
                 <Link
                   href="/services"
-                  className="inline-flex h-12 items-center justify-center rounded-full border border-zinc-200 bg-white px-6 text-sm font-semibold text-zinc-950 transition hover:bg-zinc-50"
+                  className="inline-flex h-12 items-center justify-center rounded-full border border-zinc-200 bg-white px-6 text-sm font-semibold text-brand-navy transition hover:bg-zinc-50"
                 >
                   Explore services
                 </Link>
@@ -50,7 +50,7 @@ export default function Home() {
                     key={item.k}
                     className="rounded-2xl border border-zinc-200 bg-white p-4"
                   >
-                    <dt className="text-sm font-semibold text-zinc-950">
+                    <dt className="text-sm font-semibold text-brand-navy">
                       {item.k}
                     </dt>
                     <dd className="mt-1 text-sm text-zinc-600">{item.v}</dd>
@@ -62,7 +62,7 @@ export default function Home() {
             <div className="lg:col-span-5">
               <div className="rounded-3xl border border-zinc-200 bg-gradient-to-b from-zinc-50 to-white p-6 shadow-sm">
                 <div className="rounded-2xl bg-white p-6">
-                  <div className="text-sm font-semibold text-zinc-950">
+                  <div className="text-sm font-semibold text-brand-navy">
                     Sample itinerary
                   </div>
                   <p className="mt-1 text-sm text-zinc-600">
@@ -79,19 +79,19 @@ export default function Home() {
                         key={t}
                         className="flex items-start gap-3 rounded-xl border border-zinc-200 px-4 py-3"
                       >
-                        <span className="mt-1 h-2 w-2 rounded-full bg-zinc-950" />
+                        <span className="mt-1 h-2 w-2 rounded-full bg-brand-saffron" />
                         <span className="text-sm text-zinc-700">{t}</span>
                       </div>
                     ))}
                   </div>
-                  <div className="mt-6 rounded-2xl bg-zinc-950 px-5 py-4 text-white">
+                  <div className="mt-6 rounded-2xl bg-gradient-to-br from-brand-navy to-brand-sea px-5 py-4 text-white">
                     <div className="text-sm font-semibold">Need a custom plan?</div>
                     <div className="mt-1 text-sm text-white/80">
                       Tell us dates, cities, and preferences.
                     </div>
                     <Link
                       href="/contact"
-                      className="mt-4 inline-flex h-10 items-center justify-center rounded-full bg-white px-4 text-sm font-semibold text-zinc-950"
+                      className="mt-4 inline-flex h-10 items-center justify-center rounded-full bg-white px-4 text-sm font-semibold text-brand-navy"
                     >
                       Contact us
                     </Link>
@@ -107,7 +107,7 @@ export default function Home() {
         <Container className="py-14">
           <div className="flex items-end justify-between gap-6">
             <div>
-              <h2 className="text-2xl font-semibold tracking-tight text-zinc-950">
+              <h2 className="text-2xl font-semibold tracking-tight text-brand-navy">
                 Built for travel operations
               </h2>
               <p className="mt-2 max-w-2xl text-sm leading-6 text-zinc-600">
@@ -117,7 +117,7 @@ export default function Home() {
             </div>
             <Link
               href="/services"
-              className="hidden text-sm font-semibold text-zinc-950 hover:underline sm:inline"
+              className="hidden text-sm font-semibold text-brand-navy hover:underline sm:inline"
             >
               View all services
             </Link>
@@ -142,7 +142,7 @@ export default function Home() {
                 key={c.title}
                 className="rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm"
               >
-                <div className="text-base font-semibold text-zinc-950">
+                <div className="text-base font-semibold text-brand-navy">
                   {c.title}
                 </div>
                 <p className="mt-2 text-sm leading-6 text-zinc-600">{c.desc}</p>
@@ -156,7 +156,7 @@ export default function Home() {
         <Container className="py-14">
           <div className="grid items-center gap-10 lg:grid-cols-12">
             <div className="lg:col-span-7">
-              <h2 className="text-2xl font-semibold tracking-tight text-zinc-950">
+              <h2 className="text-2xl font-semibold tracking-tight text-brand-navy">
                 Popular India regions we handle
               </h2>
               <p className="mt-2 max-w-2xl text-sm leading-6 text-zinc-600">
@@ -183,7 +183,7 @@ export default function Home() {
               <div className="mt-7">
                 <Link
                   href="/destinations"
-                  className="inline-flex h-11 items-center justify-center rounded-full border border-zinc-200 bg-white px-5 text-sm font-semibold text-zinc-950 transition hover:bg-zinc-50"
+                  className="inline-flex h-11 items-center justify-center rounded-full border border-zinc-200 bg-white px-5 text-sm font-semibold text-brand-navy transition hover:bg-zinc-50"
                 >
                   Explore destinations
                 </Link>
@@ -191,7 +191,7 @@ export default function Home() {
             </div>
             <div className="lg:col-span-5">
               <div className="rounded-3xl border border-zinc-200 bg-zinc-50 p-6">
-                <div className="text-sm font-semibold text-zinc-950">
+                <div className="text-sm font-semibold text-brand-navy">
                   What you’ll get
                 </div>
                 <ul className="mt-4 space-y-3 text-sm text-zinc-700">
@@ -202,7 +202,7 @@ export default function Home() {
                     "Clear budgets with options & upgrades",
                   ].map((x) => (
                     <li key={x} className="flex gap-3">
-                      <span className="mt-2 h-1.5 w-1.5 rounded-full bg-zinc-950" />
+                      <span className="mt-2 h-1.5 w-1.5 rounded-full bg-brand-saffron" />
                       <span>{x}</span>
                     </li>
                   ))}
@@ -211,7 +211,7 @@ export default function Home() {
                   <div className="text-xs font-semibold uppercase tracking-wide text-zinc-500">
                     Typical response time
                   </div>
-                  <div className="mt-2 text-2xl font-semibold tracking-tight text-zinc-950">
+                  <div className="mt-2 text-2xl font-semibold tracking-tight text-brand-navy">
                     Same day
                   </div>
                   <div className="mt-1 text-sm text-zinc-600">
@@ -224,7 +224,7 @@ export default function Home() {
         </Container>
       </section>
 
-      <section className="border-t border-zinc-200/70 bg-zinc-950">
+      <section className="border-t border-zinc-200/70 bg-brand-navy">
         <Container className="py-14">
           <div className="grid items-center gap-8 lg:grid-cols-12">
             <div className="lg:col-span-8">
@@ -239,7 +239,7 @@ export default function Home() {
             <div className="lg:col-span-4 lg:text-right">
               <Link
                 href="/contact"
-                className="inline-flex h-12 items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-zinc-950 transition hover:bg-zinc-100"
+                className="inline-flex h-12 items-center justify-center rounded-full bg-brand-saffron px-6 text-sm font-semibold text-white transition hover:bg-brand-saffron/90"
               >
                 Start a request
               </Link>
